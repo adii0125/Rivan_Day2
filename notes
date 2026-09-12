@@ -1,0 +1,126 @@
+SDWAN
+
+Traditional Plane Of Operation
+1.Control Plane
+2.Data Plane
+3.Management Plane
+4.Orchestration Plane
+
+restconf
+ - JSON & XML
+ - 443
+ - HTTPS
+ - HTTP Methods
+
+netconf
+ - XML
+ - 
+
+CISCO SDWAN
+1 Vmanage
+2. bond
+3. smart
+4. edge
+
+-----------------------------------
+CA
+
+PKI-SERVER(config)#crypto pki export rivanpki pem terminal
+vi
+i
+:
+esc
+:wq
+
+-----BEGIN CERTIFICATE-----
+MIIDIDCCAgigAwIBAgIBATANBgkqhkiG9w0BAQsFADAhMR8wHQYDVQQDExZyb290
+Y2EuUklWQU5DT1JQLmxvY2FsMB4XDTI2MDExODE5MDIxMloXDTI5MDExNzE5MDIx
+MlowITEfMB0GA1UEAxMWcm9vdGNhLlJJVkFOQ09SUC5sb2NhbDCCASIwDQYJKoZI
+hvcNAQEBBQADggEPADCCAQoCggEBANHmliLVoDJpoP/QYY9BYNoM5nYmqHTiWrcz
+/edesixyK6l4a5e4sFVjFnUxf/+1ND4FIUE3zsDDJEtvmiziO+/ObM+e34uSvQKU
+UoLIsUC96LQ+uwSrcWlA+0EYb9x+uHj1+sKKFE1n2paWcWHYxyy4Fdg0h/8vV4jJ
+/yLvPrsI0Tp8HvZBMiNQmZihliNc9eiBToeWci3FkIbpoylOsih+Pt9gAjHisJpJ
+2mATA0xcz5dt0DHM49zyIYUm4/F8i/NehDi98RanANgBlFVHHdIrcikAtqKq2usg
+iTtxqfRDGfinEp7N2lQcflQmwkwrGrfpTC4FX5+QLtVRst//560CAwEAAaNjMGEw
+DwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAYYwHwYDVR0jBBgwFoAUWTJM
+3TFjBLb5mucfAOAjH+36gPQwHQYDVR0OBBYEFFkyTN0xYwS2+ZrnHwDgIx/t+oD0
+MA0GCSqGSIb3DQEBCwUAA4IBAQA3f/bSd3vrB6u5F6nKMufwPoxVkRAnrTba1Ss+
+jvnjJIZ0MbXnZdHaJyZM6Lof58HRE66Kg8sYeyd+VRHthSjR+rBGfqovUqm0mTeS
+4NdwngebSbP/zrZKNsu7o/dazfJOdnNBrSqrWKoDliwXdtfrwWbei6/swX4WBVEF
+EthIAgr2uvKKbKJleBk9j5spAz9JS9nAI2nJ0D/scFbpxcxHtjuNSypGxbvUA6E8
+CihCAdhQxaGsO00S598LTCgtQepq3A0o39ER1u7L2Qa19lZXKr7jVVs7MTJlnXZo
+dVb5NArbTAGGmpvcr8FdxjMN8LPBvD9a22GpnHUkZJxI1iah
+-----END CERTIFICATE-----
+
+-------------------------------------
+for install of CA
+request root-cert-chain install /home/admin/pkicerts/rivan.ca
+
+_____________________________
+Generate CSR
+request csr upload /home/admin/pkicerts/min.csr
+
+______________________________________________
+
+vshell
+cat /home/admin/pkicerts/min.csr
+
+-----BEGIN CERTIFICATE REQUEST-----
+MIIDSTCCAjECAQAwgcgxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlh
+MREwDwYDVQQHEwhTYW4gSm9zZTESMBAGA1UECxMJUklWQU5DT1JQMRYwFAYDVQQK
+Ew1DaXNjbyBTeXN0ZW1zMUEwPwYDVQQDEzh2ZWRnZS01ZjRiZTE3Yi04ZTZhLTQ2
+YWUtOTQ2Ny0zNWIyNmY1ZDU2OWEtMS52aXB0ZWxhLmNvbTEiMCAGCSqGSIb3DQEJ
+ARYTc3VwcG9ydEB2aXB0ZWxhLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+AQoCggEBAKDZHbxLY/sNb33mh0NkY1Empr2om9foe3QHOr8RCO2ID+ansVjgcSG+
+oCdNJDf0tFdL1ErfR5sKAbDe6PXkMdW8JP1V7wiIKZL/61hA65PkWDsu7Q9dqYF+
+P9EP1biclCgAiI0h4sZzGmRUHNlHnpVdXcCNOS27Bbma7TauPP9hSofWHgvS/FXz
+MPI598m5xdxfkocabypD0oMAMi/4fPZW376oo69a5K8RriLTO5MmonAM3kaXqXBe
+qk8NJJa7fTRmEg+LPWM3TlvCjUVBDISvEmtir8ii85y0rGdeVdgu9aOqoTHW3Vh9
+BuuAMnPXPP41QFuZM+JFMepUVShw3esCAwEAAaA7MDkGCSqGSIb3DQEJDjEsMCow
+CQYDVR0TBAIwADAdBgNVHQ4EFgQUeQ5dIVNA4/yP5NmdoCB5KKPDdbowDQYJKoZI
+hvcNAQELBQADggEBACDXNqERcp0Z2d2d0rw+CEujlZ02cNCb2ZO7Ftg2OwAig29I
+Sk6Mi1GmhR2Yc2+oyYPv/1XP8VjaatM0RUQNTZSMy9VxtwRKKhauYCzfPlxYZDjh
+3OlZy5V6ht89KZ0eEDMsOSmdxB03gUpVnzuahCzeqM5eHqjE12g6QnAoL4SOAkBe
+OLdXlc7Jlt4xROjulpu6MARHUh8V3pvuGVcNohEMWk7/2AsBfJxdmjUpoYEWGFHD
+Y9oYpWL/B2omrFlYdwYFPRoL5fErBEbteduC9XTKhFwRdAHfg6pRw0kct0pFbs3G
+6lsqAsj2fMgoFnRQLYx6sfIX7fX+oxU+duG86hQ=
+-----END CERTIFICATE REQUEST-----
+
+
+______________________________________________________________
+
+crypto pki server rivanpki request pkcs10 terminal
+grantend crt
+-----BEGIN CERTIFICATE-----
+MIIDuDCCAqCgAwIBAgIBBzANBgkqhkiG9w0BAQsFADAhMR8wHQYDVQQDExZyb290
+Y2EuUklWQU5DT1JQLmxvY2FsMB4XDTI2MDkxMjExNTU1MFoXDTI3MDkxMjExNTU1
+MFowgcgxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMREwDwYDVQQH
+EwhTYW4gSm9zZTESMBAGA1UECxMJUklWQU5DT1JQMRYwFAYDVQQKEw1DaXNjbyBT
+eXN0ZW1zMUEwPwYDVQQDEzh2ZWRnZS01ZjRiZTE3Yi04ZTZhLTQ2YWUtOTQ2Ny0z
+NWIyNmY1ZDU2OWEtMS52aXB0ZWxhLmNvbTEiMCAGCSqGSIb3DQEJARYTc3VwcG9y
+dEB2aXB0ZWxhLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKDZ
+HbxLY/sNb33mh0NkY1Empr2om9foe3QHOr8RCO2ID+ansVjgcSG+oCdNJDf0tFdL
+1ErfR5sKAbDe6PXkMdW8JP1V7wiIKZL/61hA65PkWDsu7Q9dqYF+P9EP1biclCgA
+iI0h4sZzGmRUHNlHnpVdXcCNOS27Bbma7TauPP9hSofWHgvS/FXzMPI598m5xdxf
+kocabypD0oMAMi/4fPZW376oo69a5K8RriLTO5MmonAM3kaXqXBeqk8NJJa7fTRm
+Eg+LPWM3TlvCjUVBDISvEmtir8ii85y0rGdeVdgu9aOqoTHW3Vh9BuuAMnPXPP41
+QFuZM+JFMepUVShw3esCAwEAAaNTMFEwDwYDVR0TAQH/BAUwAwEB/zAfBgNVHSME
+GDAWgBRZMkzdMWMEtvma5x8A4CMf7fqA9DAdBgNVHQ4EFgQUeQ5dIVNA4/yP5Nmd
+oCB5KKPDdbowDQYJKoZIhvcNAQELBQADggEBALSvxDRl8h869jPKp5nxb85+UhXE
+lwEC841giKvPtb8aCo2Eu7rxVVrqMnXkTSj/fIu4r8NMjMOGO6pMKyeTxnwph1mH
+4OarNeUFlXCjhZPJ3D4BIKM/FtMCEMkKpWiLfSjKJYJ1K77hl1OXBrtqTu5xmY6/
+pfauoCvgSpf8dU35cy5ALKJL5Qg9eWrFnHNTT0EbLyBYlva41d5fxribUmSxw1QL
+7IHboprz1pIvwiOTqLY5A8yS2VVgDDtmReAB3mGpiAu9SwVdQBxc4c2Zujby4FPZ
+H7JkpmKyuJaNdohHIkx08UYu0jPMlCLs0yDigtFHS3yYtZpbXhCBy1wiEEI=
+-----END CERTIFICATE-----
+________________________________________________________________
+request certificate install /home/admin/pkicerts/grant.ca
+
+vEdge-MINDANAO# show certificate serial 
+Chassis number: 5f4be17b-8e6a-46ae-9467-35b26f5d569a serial number 07
+
+request vedge add chassis-num 5f4be17b-8e6a-46ae-9467-35b26f5d569a serial-num 07
+
+____________________________________________________________________
+The enrollment challenge password is: 4195C3E421074F5B 
+
